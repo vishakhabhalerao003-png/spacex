@@ -26,17 +26,16 @@
 			z-index:1
 		}
 		
-		header > div {
+		header > img {
 			font-size:25px;
-			margin:1.4% 1%;
-			float:left
+			float:left;
 		}
 		
 		header > nav {
 			font-size:14px;
 			text-align:center;
 			width:70%;
-			margin:2% 3%;
+			margin:2% 1%;
 			float:left;
 		}
 		
@@ -57,7 +56,8 @@
 		}
 		
 		main section > img , video {
-			width:100%
+			width:100%;
+			
 		}
 		
 		main div > span {
@@ -107,17 +107,17 @@
 	</head>
 	<body>
 		<header>
-			<div>SPACEX</div>
+			<img src="videos\Screenshot_2026-11-20_181621-removebg-preview.png">
 			
-			<nav>
-				<a href="#v">VEHICLES</a>
-				<a href="#h">HUMAN SPACELIGHT</a>
+			<nav>  
+				<span>VEHICLES</span>
+				<span>HUMAN SPACELIGHT</span>
 				<a href="https://starlink.com/">STARLINK</a>
 				<a href="https://www.spacex.com/starshield">STARSHIELD</a>
-				<a href="#s">SPACEXSI</a>
+				<span>SPACEXSI</span>
 				<a href="https://terafab.ai/">TERAFAB</a>
-				<a href="#c">COMPANY</a>
-				<a href="#sh">SHOP</a>
+				<span>COMPANY</span>
+				<span>SHOP</span>
 			</nav>
 			
 			<div class="launch">
@@ -137,37 +137,37 @@
 				</div>
 			</section>
 			
-			<section>
+			<section style="position:sticky; top:0;">
 				<video autoplay loop muted preload="none" >
 					<source src="Videos\SpaceXclip3.mp4" type="video/mp4">
 				</video>
 			</section>
 			
-			<section>
+			<section style="position:sticky; top:0;">
 				<video autoplay loop muted preload="none" >
 					<source src="Videos\SpaceXclip5.mp4" type="video/mp4">
 				</video>
 			</section>
 			
-			<section>
+			<section style="position:sticky; top:0;">
 				<img src="https://www.nasa.gov/wp-content/uploads/2025/03/nasas-spacex-crew-10-mission-launches-from-kennedy-space-center.jpg?w=1280">
 			</section>
 			
-			<section>
+			<section style="position:sticky; top:0;">
 				<video autoplay loop muted preload="none" >
 					<source src="Videos\SpaceXclip4.mp4" type="video/mp4">
 				</video>
 			</section>
 			
-			<section>
+			<section style="position:fixed">
 				<img src="https://www.spacex.com/assets/images/human-spaceflight/home/Our_Mission_01.jpg">
 			</section>
 			
-			<section>
+			<section style="position:fixed; z-index:1%">
 				<img src="https://substackcdn.com/image/fetch/$s_!8XbU!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec10e87f-9042-4b4e-8692-0d4d86a6bdbf_2680x1361.jpeg">
 			</section>
 			
-			<section>
+			<section style="z-index:1">
 				<img src="https://content.spacex.com/cms-assets/assets/home_hero_ba20d17dfc.webp">
 			</section>
 			
