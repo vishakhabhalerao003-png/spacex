@@ -1,189 +1,595 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
 			SpaceX
 		</title>
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.9.1/remixicon.css" integrity="sha512-FdAV4hphiNQnSV3CopyZQ5GY8ZNiwmI0pGo8meKtmmKjtiro8TNuRB6tqanbQo+tMGRcYxYJkBT5lQTe/3oTlQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-		
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.9.1/remixicon.css">
+
 		<style>
-		
-		body {
-			margin:0%;
-			padding:0%;
-			background-color:black;
-		}
-		
-		* {
-			box-sizing:border:box
-		}
-		
-		header {
-			position:fixed;
-			width:100%;
-			color:white;
-			z-index:1
-		}
-		
-		header > img {
-			font-size:25px;
-			float:left;
-		}
-		
-		header > nav {
-			font-size:14px;
-			text-align:center;
-			width:70%;
-			margin:2% 1%;
-			float:left;
-		}
-		
-		header nav > a {
-			text-decoration:none;
-			margin:0% 2%;
-			color:white;
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: black;
+			}
+
+			header {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				padding: 15px 3%;
+				color: white;
+				z-index: 10;
+			}
+
+			header > img {
+				width: 135px;
+				float: left;
+				margin-top: 8px;
+			}
+
+			header > nav {
+				font-size: 13px;
+				text-align: center;
+				width: 65%;
+				float: left;
+				margin: 20px 1%;
+			}
+
+			header nav > a {
+				text-decoration: none;
+				margin: 0 10px;
+				color: white;
+			}
+
+			.menu {
+				position: relative;
+				margin: 0 10px;
+			}
+
+			.dropdown {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 160px;
+				padding-top: 15px;
+				text-align: left;
+				opacity: 0;
+				z-index: 2;
+			}
+
+			.dropdown a {
+				color: white;
+				text-decoration: none;
+				font-size: 13px;
+				margin: 8px 0;
+			}
+
+			.menu:hover .dropdown {
+				opacity: 1;
+			}
+
+			.launch {
+				float: right;
+				position: relative;
+				font-size: 11px;
+				border: 1px solid #777;
+				border-radius: 5px;
+				padding: 10px;
+				margin-top: 8px;
+				width: 250px;
+				color: white;
+			}
+
+			.launch-dropdown {
+				position: absolute;
+				top: 100%;
+				right: 0;
+				width: 270px;
+				padding-top: 15px;
+				opacity: 0;
+				z-index: 3;
+			}
+
+			.launch-card {
+				width: 100%;
+				padding: 10px 5px;
+				color: white;
+			}
+
+			.launch-card img {
+				width: 65px;
+				height: 60px;
+				float: left;
+				border-radius: 8px;
+			}
+
+			.launch-card a {
+				color: white;
+				text-decoration: none;
+			}
+
+			.launch-card p {
+				font-size: 12px;
+				margin-left: 75px;
+				margin-top: 5px;
+			}
+
+			.launch:hover .launch-dropdown {
+				opacity: 1;
+			}
+
+			main section:nth-child(n+5) {
+				position: relative;
+				z-index: 5;
+			}
 			
-		}
-		
-		.launch {
-			float:right; 
-			font-size:12px; 
-			border:1px solid white; 
-			border-radius:5px; 
-			padding:8px 1%; 
-			margin-right:10px
-		}
-		
-		main section > img , video {
-			width:100%;
+			main section > img, main section > video {
+				width: 100%;
+			}
 			
-		}
-		
-		main div > span {
-			font-size:14px;
-			color:white;
-			z-index:1;
-			float:left;
+			.stop1 {
+				position: sticky;
+				top: 0;
+				z-index: 2;
+			}
+
+			.stop2 {
+				position: sticky;
+				top: 0;
+				z-index: 3;
+			}
+
+			.stop3 {
+				position: sticky;
+				top: 0;
+				z-index: 4;
+			}
 			
+			.caption {
+				position: absolute;
+				top: 40%;
+				left: 4.5%;
+				color: white;
+				text-align: left;
+				z-index: 2;
+			}
+
+			.caption p {
+				font-size: 15px;
+				text-align: left;
+			}
+
+			.caption h1 {
+				font-size: 55px;
+				margin: 0 0 45px 0;
+			}
 			
-		}
-		
-		footer {
-			padding:2%;
-		}
-		
-		.icon {
-			text-decoration:none;;
-			margin:2% 8%
-		}
-		
-		footer  div {
-			float:right;
-			color:white
-		}
-		
-		footer > a {
-			text-decoration:none;
-			color:white;
-			text-align:center;
-			font-size:14px;
-			margin:0% 1%;
-		}
-		
-		.footleft {
-			margin-left:13%
-		}
-		
-		footer a > i {
-			background-color:#2b2b2b;
-			border-radius:50px;
-			color:white;
-			padding:17px;
-			font-size:12px
-		}
-		
+			.caption a {
+				text-decoration: none;
+				color: white;
+				border: 1px solid #777;
+				border-radius: 4px;
+				padding: 17px 25px;
+				font-size: 12px;
+			}
+			
+			.caption-orbit {
+				top: 36%;
+				left: 3.3%;
+			}
+
+			.caption-mars {
+				top: 15%;
+				left: 7.3%;
+				width: 48%;
+			}
+
+			.caption-mars h1 {
+				font-size: 78px;
+				margin-bottom: 20px;
+			}
+
+			.caption-technology {
+				top: 19%;
+				left: 57.5%;
+				width: 38%;
+			}
+
+			.caption-technology h1 {
+				font-size: 46px;
+				margin-bottom: 20px;
+			}
+			
+			.caption-human {
+				top: 20%;
+				left: 57.5%;
+				width: 35%;
+			}
+			
+			.caption-human h1 {
+				font-size: 46px;
+				margin-bottom: 20px;
+			}
+
+			.caption-starlink {
+				top: 20%;
+				left: 7.3%;
+				width: 35%;
+			}
+
+			.caption-starlink h1 {
+				font-size: 46px;
+				margin-bottom: 20px;
+			}
+
+			.caption-ai {
+				top: 20%;
+				left: 57.5%;
+				width: 35%;
+			}
+
+			.caption-ai h1 {
+				font-size: 46px;
+				margin-bottom: 20px;
+			}
+			
+			.caption-launch {
+				top: 14%;
+				left: 7.3%;
+				width: 35%;
+			}
+
+			.caption-launch h1 {
+				font-size: 46px;
+				margin-bottom: 20px;
+			}
+			
+			footer {
+				padding: 25px 2%;
+				text-align: center;
+			}
+
+			footer > a {
+				text-decoration: none;
+				color: white;
+				font-size: 13px;
+				margin: 0 12px;
+			}
+
+			footer .icon {
+				float: left;
+				margin-left: 2%;
+			}
+
+			footer a > i {
+				background-color: #2b2b2b;
+				border-radius: 50%;
+				color: white;
+				padding: 12px;
+				font-size: 13px;
+			}
+
+			footer > div {
+				float: right;
+				color: white;
+				font-size: 13px;
+			}
+
 		</style>
 	</head>
+
 	<body>
+
 		<header>
-			<img src="videos\Screenshot_2026-11-20_181621-removebg-preview.png">
-			
-			<nav>  
-				<span>VEHICLES</span>
-				<span>HUMAN SPACELIGHT</span>
+
+			<img src="videos/Screenshot_2026-11-20_181621-removebg-preview.png">
+
+			<nav>
+
+				<span class="menu">
+					VEHICLES
+
+					<div class="dropdown">
+						<a href="https://www.spacex.com/vehicles/starship">STARSHIP</a><br>
+						<a href="https://www.spacex.com/vehicles/dragon">DRAGON</a><br>
+						<a href="https://www.spacex.com/vehicles/falcon-9">FALCON 9</a><br>
+						<a href="https://www.spacex.com/vehicles/falcon-heavy">FALCON HEAVY</a><br>
+						<a href="https://www.spacex.com/starfall">STARFALL</a>
+					</div>
+				</span>
+
+				<span class="menu">
+					HUMAN SPACEFLIGHT
+
+					<div class="dropdown">
+						<a href="https://www.spacex.com/humanspaceflight/overview">Overview</a><br>
+						<a href="https://www.spacex.com/humanspaceflight/iss">Space Station</a><br>
+						<a href="https://www.spacex.com/humanspaceflight/earth">Earth Orbit</a><br>
+						<a href="https://www.spacex.com/humanspaceflight/moon">The Moon</a><br>
+						<a href="https://www.spacex.com/humanspaceflight/mars">Mars & Beyond</a>
+					</div>
+				</span>
+
 				<a href="https://starlink.com/">STARLINK</a>
+
 				<a href="https://www.spacex.com/starshield">STARSHIELD</a>
-				<span>SPACEXSI</span>
+
+				<span class="menu">
+					SPACEXSI
+
+					<div class="dropdown">
+						<a href="https://www.spacex.com/spacexsi/starmind">STARMIND</a><br>
+						<a href="https://x.ai/">GROK</a><br>
+						<a href="https://grokipedia.com/">GROKIPEDIA</a><br>
+						<a href="https://x.com/">𝕏</a>
+					</div>
+				</span>
+
 				<a href="https://terafab.ai/">TERAFAB</a>
-				<span>COMPANY</span>
-				<span>SHOP</span>
+
+				<span class="menu">
+					COMPANY
+
+					<div class="dropdown">
+						<a href="https://www.spacex.com/mission">Mission</a><br>
+						<a href="https://www.spacex.com/careers">Careers</a><br>
+						<a href="https://www.spacex.com/sites">Sites</a><br>
+						<a href="https://www.spacex.com/updates">Updates</a><br>
+						<a href="https://www.spacex.com/content">Content</a><br>
+						<a href="https://ir.spacex.com/">Investors</a>
+					</div>
+				</span>
+
+				<span class="menu">
+					SHOP
+
+					<div class="dropdown">
+						<a href="https://shop.spacex.com/">SpaceX</a><br>
+						<a href="https://shop.x.com/">SPACEXSI</a>
+
+					</div>
+				</span>
+
 			</nav>
-			
+
 			<div class="launch">
-				UPCOMING LAUNCHES <i class="ri-arrow-down-s-line"></i>
+
+				UPCOMING LAUNCHES
+				<i class="ri-arrow-down-s-line"></i>
+
+				<div class="launch-dropdown">
+
+					<div class="launch-card">
+
+						<a href="https://www.spacex.com/launches/nrol136">
+							<img src="https://www.nasa.gov/wp-content/uploads/2025/03/nasas-spacex-crew-10-mission-launches-from-kennedy-space-center.jpg?w=1280">
+
+							<p>
+								NROL-136 Mission<br>
+								T-04:41:16
+							</p>
+						</a>
+
+					</div>
+					
+					<hr>
+					
+					<div class="launch-card">
+
+						<a href="https://www.spacex.com/launches/ussf266">
+							<img src="https://www.nasa.gov/wp-content/uploads/2025/03/nasas-spacex-crew-10-mission-launches-from-kennedy-space-center.jpg?w=1280">
+
+							<p>
+								USSF-266 Mission<br>
+								November 24, 2026<br>
+								21:25 India Time
+							</p>
+						</a>
+				
+					</div>
+					
+					<hr>
+					
+					<div class="launch-card">
+						<a href="https://www.spacex.com/launches">ALL UPCOMING LAUNCHES</a>
+					</div>
+
+				</div>
+
 			</div>
+
 		</header>
-		
+
 		<main>
+
 			<section>
-				<video autoplay loop muted preload="none" >
-					<source src="Videos\SpaceXclip1.mp4" type="video/mp4">
+
+				<video autoplay loop muted preload="none">
+					<source src="Videos/SpaceXclip1.mp4" type="video/mp4">
+				</video>
+
+				<div class="caption">
+
+					<p>NOVEMBER 13, 2026 - NOVEMBER 14, 2026</p>
+
+					<h1>STARSHIP FLIGHT 15</h1>
+
+					<a href="file:///D:/HTML_and_CSS/SpaceX/index.html#">WATCH <i class="ri-arrow-right-line"></i></a>
+
+				</div>
+
+			</section>
+
+			<section class="stop1">
+				<video autoplay loop muted preload="none">
+					<source src="Videos/SpaceXclip3.mp4" type="video/mp4">
 				</video>
 				
-				<div style="">
-					November 13, 2026 - November 14, 2026
-					Starship Flight 15
+				<div class="caption caption-orbit">
+
+					<h1>GO FOR ORBIT</h1>
+
+					<p>November 6, 2026</p>
+
+					<p>
+						Experience the moments behind flying the most ambitious
+						Starship mission yet.
+					</p>
+
+					<a href="#">WATCH NOW <i class="ri-arrow-right-line"></i></a>
+
+				</div>
+			</section>
+
+			<section class="stop2">
+				<video autoplay loop muted preload="none">
+					<source src="Videos/SpaceXclip5.mp4" type="video/mp4">
+				</video>
+				
+				<div class="caption caption-mars">
+
+					<h1>MAKING<br>
+						LIFE<br>
+						MULTIPLANETARY
+					</h1>
+
+					<p>
+						SpaceX was founded under the belief that a future where
+						humanity is out exploring the stars is fundamentally more
+						exciting than one where we are not.
+					</p>
+
+					<a href="#">EXPLORE <i class="ri-arrow-right-line"></i></a>
+
+				</div>
+			</section>
+
+			<section class="stop3">
+				<img src="https://www.nasa.gov/wp-content/uploads/2025/03/nasas-spacex-crew-10-mission-launches-from-kennedy-space-center.jpg?w=1280">
+						
+				<div class="caption caption-technology">		
+					<h1>
+						REVOLUTIONIZING<br>
+						SPACE TECHNOLOGY
+					</h1>
+
+					<p>
+						SpaceX's Starship spacecraft and Super Heavy rocket is a fully
+						reusable transportation system designed to carry both crew
+						and cargo to Earth orbit, the Moon, Mars, and beyond.
+					</p>
+
+					<a href="#">LEARN MORE <i class="ri-arrow-right-line"></i></a>
+
+				</div>			
+			</section>
+
+			<section>
+				<video autoplay loop muted preload="none">
+					<source src="Videos/SpaceXclip4.mp4" type="video/mp4">
+				</video>
+				
+				<div class="caption caption-launch">
+
+					<h1>
+						WORLD'S LEADING<br>
+						LAUNCH SERVICE<br>
+						PROVIDER
+					</h1>
+
+					<p>
+						SpaceX leads the world in launches with its reliable, reusable
+						rockets and is developing the fully and rapidly reusable
+						rockets necessary to transform humanity's ability to access
+						space into something as routine as air travel.
+					</p>
+
+					<a href="#">RESERVE YOUR RIDE <i class="ri-arrow-right-line"></i></a>
+
 				</div>
 			</section>
 			
-			<section style="position:sticky; top:0;">
-				<video autoplay loop muted preload="none" >
-					<source src="Videos\SpaceXclip3.mp4" type="video/mp4">
-				</video>
-			</section>
-			
-			<section style="position:sticky; top:0;">
-				<video autoplay loop muted preload="none" >
-					<source src="Videos\SpaceXclip5.mp4" type="video/mp4">
-				</video>
-			</section>
-			
-			<section style="position:sticky; top:0;">
-				<img src="https://www.nasa.gov/wp-content/uploads/2025/03/nasas-spacex-crew-10-mission-launches-from-kennedy-space-center.jpg?w=1280">
-			</section>
-			
-			<section style="position:sticky; top:0;">
-				<video autoplay loop muted preload="none" >
-					<source src="Videos\SpaceXclip4.mp4" type="video/mp4">
-				</video>
-			</section>
-			
-			<section style="position:fixed">
+			<section>
 				<img src="https://www.spacex.com/assets/images/human-spaceflight/home/Our_Mission_01.jpg">
+
+				<div class="caption caption-human">
+
+					<h1>ADVANCING HUMAN SPACEFLIGHT</h1>
+
+					<p>
+						Since returning human spaceflight capabilities to the
+						United States in 2020, SpaceX is helping build a new era
+						where not just hundreds of people, but thousands and
+						ultimately millions will be able to explore space.
+					</p>
+
+					<a href="#">JOIN A MISSION <i class="ri-arrow-right-line"></i></a>
+
+				</div>
 			</section>
 			
-			<section style="position:fixed; z-index:1%">
+			<section>
 				<img src="https://substackcdn.com/image/fetch/$s_!8XbU!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec10e87f-9042-4b4e-8692-0d4d86a6bdbf_2680x1361.jpeg">
+
+				<div class="caption caption-starlink">
+
+					<h1>DELIVERING HIGH-SPEED INTERNET FROM SPACE</h1>
+
+					<p>
+						Starlink is the world's most advanced satellite constellation
+						in low-Earth orbit, delivering reliable broadband internet
+						capable of supporting streaming, online gaming, video calls,
+						and more.
+					</p>
+
+					<a href="#">ORDER NOW <i class="ri-arrow-right-line"></i></a>
+
+				</div>
 			</section>
 			
-			<section style="z-index:1">
+			<section>
 				<img src="https://content.spacex.com/cms-assets/assets/home_hero_ba20d17dfc.webp">
+				
+				<div class="caption caption-ai">
+
+					<h1>DEVELOPING ORBITAL AI COMPUTE</h1>
+
+					<p>
+						SpaceX is the only vertical integrated company capable
+						of developing a truly scalable solution for the future
+						of AI.
+					</p>
+
+					<a href="https://www.spacex.com/spacexsi/starmind">
+						STARMIND <i class="ri-arrow-right-line"></i>
+					</a>
+
+				</div>
 			</section>
-			
 		</main>
-		
+
 		<footer>
-		
-			<a class="icon" href="https://x.com/SpaceX"><i class="ri-twitter-x-line"></i></a>
-		
-			<a class="footleft" href="https://www.spacex.com/careers">Careers</a>
+
+			<a class="icon" href="https://x.com/SpaceX">
+				<i class="ri-twitter-x-line"></i>
+			</a>
+
+			<a href="https://www.spacex.com/careers">Careers</a>
 			<a href="https://www.spacex.com/updates">Updates</a>
 			<a href="https://www.spacex.com/assets/media/privacy_policy_spacex.pdf">Privacy Policy</a>
 			<a href="https://www.spacex.com/supplier">Suppliers</a>
 			<a href="https://ir.spacex.com/investors/default.aspx">Investors</a>
-		
+
 			<div>© 2026 SpaceX</div>
+
 		</footer>
+
 	</body>
 </html>
