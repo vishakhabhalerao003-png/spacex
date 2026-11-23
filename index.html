@@ -57,24 +57,26 @@
 				position: absolute;
 				top: 100%;
 				left: 0;
-				width: 160px;
-				padding-top: 15px;
+				width: 200px;
+				padding: 0px;
 				text-align: left;
 				opacity: 0;
 				z-index: 2;
+				list-style-type:none;
+				margin-top:9%;
 			}
 
-			.dropdown a {
+			.over {
 				color: white;
 				text-decoration: none;
 				font-size: 13px;
-				margin: 8px 0;
+				margin-top:5%;
 			}
 
 			.menu:hover .dropdown {
 				opacity: 1;
 			}
-
+			
 			.launch {
 				float: right;
 				position: relative;
@@ -87,6 +89,11 @@
 				color: white;
 			}
 
+			.launch:hover {
+				background-color:white;
+				color:black
+			}
+		
 			.launch-dropdown {
 				position: absolute;
 				top: 100%;
@@ -102,7 +109,7 @@
 				padding: 10px 5px;
 				color: white;
 			}
-
+			
 			.launch-card img {
 				width: 65px;
 				height: 60px;
@@ -125,13 +132,14 @@
 				opacity: 1;
 			}
 
-			main section:nth-child(n+5) {
+			.text {
 				position: relative;
-				z-index: 5;
+				z-index: 5;	
 			}
 			
-			main section > img, main section > video {
+			main section > img, video {
 				width: 100%;
+				margin:-1%;
 			}
 			
 			.stop1 {
@@ -161,6 +169,16 @@
 				z-index: 2;
 			}
 
+			.over:hover {
+				color:red;
+				font-size:20px;
+			}
+			
+			section a:hover {
+				background-color:white;
+				color:black
+			}
+			
 			.caption p {
 				font-size: 15px;
 				text-align: left;
@@ -263,6 +281,10 @@
 				margin: 0 12px;
 			}
 
+			footer a:hover {
+				color:red
+			}
+			
 			footer .icon {
 				float: left;
 				margin-left: 2%;
@@ -296,25 +318,25 @@
 				<span class="menu">
 					VEHICLES
 
-					<div class="dropdown">
-						<a href="https://www.spacex.com/vehicles/starship">STARSHIP</a><br>
-						<a href="https://www.spacex.com/vehicles/dragon">DRAGON</a><br>
-						<a href="https://www.spacex.com/vehicles/falcon-9">FALCON 9</a><br>
-						<a href="https://www.spacex.com/vehicles/falcon-heavy">FALCON HEAVY</a><br>
-						<a href="https://www.spacex.com/starfall">STARFALL</a>
-					</div>
+					<ul class="dropdown">
+						<li class="over" href="https://www.spacex.com/vehicles/starship">STARSHIP</li>
+						<li class="over" href="https://www.spacex.com/vehicles/dragon">DRAGON</li>
+						<li class="over" href="https://www.spacex.com/vehicles/falcon-9">FALCON 9</li>
+						<li class="over" href="https://www.spacex.com/vehicles/falcon-heavy">FALCON HEAVY</li>
+						<li class="over" href="https://www.spacex.com/starfall">STARFALL</li>
+					</ul>
 				</span>
 
 				<span class="menu">
 					HUMAN SPACEFLIGHT
 
-					<div class="dropdown">
-						<a href="https://www.spacex.com/humanspaceflight/overview">Overview</a><br>
-						<a href="https://www.spacex.com/humanspaceflight/iss">Space Station</a><br>
-						<a href="https://www.spacex.com/humanspaceflight/earth">Earth Orbit</a><br>
-						<a href="https://www.spacex.com/humanspaceflight/moon">The Moon</a><br>
-						<a href="https://www.spacex.com/humanspaceflight/mars">Mars & Beyond</a>
-					</div>
+					<ul class="dropdown">
+						<li class="over" href="https://www.spacex.com/humanspaceflight/overview">Overview</li>
+						<li class="over" href="https://www.spacex.com/humanspaceflight/iss">Space Station</li>
+						<li class="over" href="https://www.spacex.com/humanspaceflight/earth">Earth Orbit</li>
+						<li class="over" href="https://www.spacex.com/humanspaceflight/moon">The Moon</li>
+						<li class="over" href="https://www.spacex.com/humanspaceflight/mars">Mars & Beyond</li>
+					</ul>
 				</span>
 
 				<a href="https://starlink.com/">STARLINK</a>
@@ -324,12 +346,12 @@
 				<span class="menu">
 					SPACEXSI
 
-					<div class="dropdown">
-						<a href="https://www.spacex.com/spacexsi/starmind">STARMIND</a><br>
-						<a href="https://x.ai/">GROK</a><br>
-						<a href="https://grokipedia.com/">GROKIPEDIA</a><br>
-						<a href="https://x.com/">𝕏</a>
-					</div>
+					<ul class="dropdown">
+						<li class="over" href="https://www.spacex.com/spacexsi/starmind">STARMIND</li>
+						<li class="over" href="https://x.ai/">GROK</li>
+						<li class="over" href="https://grokipedia.com/">GROKIPEDIA</li>
+						<li class="over" href="https://x.com/">𝕏</li>
+					</ul>
 				</span>
 
 				<a href="https://terafab.ai/">TERAFAB</a>
@@ -337,24 +359,24 @@
 				<span class="menu">
 					COMPANY
 
-					<div class="dropdown">
-						<a href="https://www.spacex.com/mission">Mission</a><br>
-						<a href="https://www.spacex.com/careers">Careers</a><br>
-						<a href="https://www.spacex.com/sites">Sites</a><br>
-						<a href="https://www.spacex.com/updates">Updates</a><br>
-						<a href="https://www.spacex.com/content">Content</a><br>
-						<a href="https://ir.spacex.com/">Investors</a>
-					</div>
+					<ul class="dropdown">
+						<li class="over" href="https://www.spacex.com/mission">Mission</li>
+						<li class="over" href="https://www.spacex.com/careers">Careers</li>
+						<li class="over" href="https://www.spacex.com/sites">Sites</li>
+						<li class="over" href="https://www.spacex.com/updates">Updates</li>
+						<li class="over" href="https://www.spacex.com/content">Content</li>
+						<li class="over" href="https://ir.spacex.com/">Investors</li>
+					</ul>
 				</span>
 
 				<span class="menu">
 					SHOP
 
-					<div class="dropdown">
-						<a href="https://shop.spacex.com/">SpaceX</a><br>
-						<a href="https://shop.x.com/">SPACEXSI</a>
+					<ul class="dropdown">
+						<li class="over" href="https://shop.spacex.com/">SpaceX</li>
+						<li class="over" href="https://shop.x.com/">SPACEXSI</li>
 
-					</div>
+					</ul>
 				</span>
 
 			</nav>
@@ -409,7 +431,7 @@
 
 		<main>
 
-			<section>
+			<section class="text">
 
 				<video autoplay loop muted preload="none">
 					<source src="Videos/SpaceXclip1.mp4" type="video/mp4">
@@ -421,13 +443,13 @@
 
 					<h1>STARSHIP FLIGHT 15</h1>
 
-					<a href="file:///D:/HTML_and_CSS/SpaceX/index.html#">WATCH <i class="ri-arrow-right-line"></i></a>
+					<a href="https://www.spacex.com/launches/starship-flight-15">WATCH <i class="ri-arrow-right-line"></i></a>
 
 				</div>
 
 			</section>
 
-			<section class="stop1">
+			<section class="stop1 text">
 				<video autoplay loop muted preload="none">
 					<source src="Videos/SpaceXclip3.mp4" type="video/mp4">
 				</video>
@@ -443,12 +465,14 @@
 						Starship mission yet.
 					</p>
 
-					<a href="#">WATCH NOW <i class="ri-arrow-right-line"></i></a>
+					<br>
+
+					<a href="https://www.spacex.com/content/starship/go-for-orbit">WATCH NOW <i class="ri-arrow-right-line"></i></a>
 
 				</div>
 			</section>
 
-			<section class="stop2">
+			<section class="stop2 text">
 				<video autoplay loop muted preload="none">
 					<source src="Videos/SpaceXclip5.mp4" type="video/mp4">
 				</video>
@@ -466,12 +490,14 @@
 						exciting than one where we are not.
 					</p>
 
-					<a href="#">EXPLORE <i class="ri-arrow-right-line"></i></a>
+					<br>
+
+					<a href="https://www.spacex.com/humanspaceflight/mars">EXPLORE <i class="ri-arrow-right-line"></i></a>
 
 				</div>
 			</section>
 
-			<section class="stop3">
+			<section class="stop3 text">
 				<img src="https://www.nasa.gov/wp-content/uploads/2025/03/nasas-spacex-crew-10-mission-launches-from-kennedy-space-center.jpg?w=1280">
 						
 				<div class="caption caption-technology">		
@@ -486,12 +512,14 @@
 						and cargo to Earth orbit, the Moon, Mars, and beyond.
 					</p>
 
-					<a href="#">LEARN MORE <i class="ri-arrow-right-line"></i></a>
+					<br>
+
+					<a href="https://www.spacex.com/vehicles/starship">LEARN MORE <i class="ri-arrow-right-line"></i></a>
 
 				</div>			
 			</section>
 
-			<section>
+			<section  class="text">
 				<video autoplay loop muted preload="none">
 					<source src="Videos/SpaceXclip4.mp4" type="video/mp4">
 				</video>
@@ -511,12 +539,14 @@
 						space into something as routine as air travel.
 					</p>
 
-					<a href="#">RESERVE YOUR RIDE <i class="ri-arrow-right-line"></i></a>
+					<br>
+
+					<a href="https://www.spacex.com/rideshare">RESERVE YOUR RIDE <i class="ri-arrow-right-line"></i></a>
 
 				</div>
 			</section>
 			
-			<section>
+			<section class="text">
 				<img src="https://www.spacex.com/assets/images/human-spaceflight/home/Our_Mission_01.jpg">
 
 				<div class="caption caption-human">
@@ -530,12 +560,14 @@
 						ultimately millions will be able to explore space.
 					</p>
 
-					<a href="#">JOIN A MISSION <i class="ri-arrow-right-line"></i></a>
+					<br>
+
+					<a href="https://www.spacex.com/humanspaceflight">JOIN A MISSION <i class="ri-arrow-right-line"></i></a>
 
 				</div>
 			</section>
 			
-			<section>
+			<section class="text">
 				<img src="https://substackcdn.com/image/fetch/$s_!8XbU!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec10e87f-9042-4b4e-8692-0d4d86a6bdbf_2680x1361.jpeg">
 
 				<div class="caption caption-starlink">
@@ -549,12 +581,14 @@
 						and more.
 					</p>
 
-					<a href="#">ORDER NOW <i class="ri-arrow-right-line"></i></a>
+					<br>
+
+					<a href="https://www.starlink.com/">ORDER NOW <i class="ri-arrow-right-line"></i></a>
 
 				</div>
 			</section>
 			
-			<section>
+			<section class="text">
 				<img src="https://content.spacex.com/cms-assets/assets/home_hero_ba20d17dfc.webp">
 				
 				<div class="caption caption-ai">
@@ -566,8 +600,10 @@
 						of developing a truly scalable solution for the future
 						of AI.
 					</p>
+					
+					<br>
 
-					<a href="https://www.spacex.com/spacexsi/starmind">
+					<a href="https://www.spacex.com/spacexai/starmind">
 						STARMIND <i class="ri-arrow-right-line"></i>
 					</a>
 
